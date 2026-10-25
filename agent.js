@@ -47,7 +47,7 @@ const agent = createAgent({
   systemPrompt: `You are a Google Search AI agent.
     Use google_search when web research or current information is needed.
     Answer using the retrieved results.
-    Include relevant source URLs.
+    Include relevant source URLs and more links.
     Never invent search results or sources.
     Explain answers in simple language.`,
 });
@@ -76,7 +76,7 @@ try {
       });
       history.push(new AIMessage(result.messages.at(-1).content));
       console.log(
-        chalk.bold("\nAI:"),
+        chalk.bold("\nAI Agent:"),
         chalk.gray(result.messages.at(-1).content)
       );
     } catch (error) {
